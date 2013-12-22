@@ -27,6 +27,4 @@ public:
     bool openPort();
 };
 
-
-
 #endif // COMMUNICATION_H

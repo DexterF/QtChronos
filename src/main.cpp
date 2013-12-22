@@ -30,8 +30,11 @@ int main(int argc, char *argv[])
     Communication *ser = new Communication();
 
     QLabel *label;
-    if(ser->apAvail())
+    if(ser->apAvail()){
+
         label = new QLabel(QString::fromStdString("Woot! Available!!"));
+        ser->openPort();
+    }
     else
         label = new QLabel(QString::fromStdString("=( No ap available"));
 

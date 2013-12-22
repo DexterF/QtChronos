@@ -5,8 +5,6 @@
 #include <QVBoxLayout>
 #include <QLabel>
 
-
-
 Communication::Communication()
 {
     this->isappresent = false;
@@ -39,12 +37,14 @@ bool Communication::apAvail(){
 bool Communication::openPort(){
     if(this->apAvail()){
         portlist tmp = apports.front();
-        serial = new QSerialPort(tmp.name);
-        serial->setBaudRate(QSerialPort::Baud115200);
-        if(serial->open(QIODevice::ReadWrite))
+        serial = new QSerialPort();
+        serial->setPortName("ttyS0");
+        if(serial->open(QIODevice::ReadWrite)){
+            serial->setBaudRate(QSerialPort::Baud115200);
             return true;
+        }
         else
-            QDebug("Serial open failed with error: " + serial->errorString());
+            qDebug() << "Serial open failed with error: " << serial->errorString();
     }
     return false;
 }
