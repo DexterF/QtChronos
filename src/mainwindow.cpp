@@ -10,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent) :
      * Create and set the settings button on the top left of the tabs
      **************************************************************************/
     buttonSettings = new QPushButton();
+    buttonSettings->setText(QString("QtChronos"));
     ui->tabWidget->setCornerWidget(buttonSettings, Qt::TopLeftCorner);
     setupMenu();
     connect(buttonSettings, SIGNAL(clicked()),
