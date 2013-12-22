@@ -16,9 +16,11 @@ typedef struct _portlist{
 
 class Communication
 {
+private:
+    bool isappresent;
 public:
     Communication();
-    QString listPorts();
+    bool portAvail();
     std::vector<portlist> ports;
 };
 

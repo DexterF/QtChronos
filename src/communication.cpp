@@ -14,11 +14,15 @@ Communication::Communication()
         tmp.name = info.portName();
         tmp.path = info.systemLocation();
         tmp.description = info.manufacturer() + " " + info.description();
+        if(info.hasProductIdentifier() && info.hasVendorIdentifier()){
+            if(info.productIdentifier()==0340 && info.vendorIdentifier()==2047)
+                this->isappresent == true;
+        }
 
         ports.push_back(tmp);
     }
 }
 
-QString Communication::listPorts(){
+bool Communication::portAvail(){
 
 }
