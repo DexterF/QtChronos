@@ -5,7 +5,6 @@
 
 #include <QMainWindow>
 #include <QPushButton>
-#include <QShortcut>
 #include <QMenu>
 
 namespace Ui {
