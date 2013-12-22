@@ -6,15 +6,17 @@
 
 QT       += core gui
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets serialport
 
 TARGET = QtChronos
 TEMPLATE = app
 
 
 SOURCES += src/main.cpp\
-        src/mainwindow.cpp
+        src/mainwindow.cpp \
+    src/communication.cpp
 
-HEADERS  += headers/mainwindow.h
+HEADERS  += headers/mainwindow.h \
+    headers/communication.h
 
 FORMS    += ui/mainwindow.ui
