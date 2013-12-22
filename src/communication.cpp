@@ -9,6 +9,7 @@
 
 Communication::Communication()
 {
+    this->isappresent = false;
     portlist tmp;
     foreach (const QSerialPortInfo &info, QSerialPortInfo::availablePorts()) {
         tmp.name = info.portName();
@@ -25,12 +26,23 @@ Communication::Communication()
 
 bool Communication::apAvail(){
     bool avail = false;
-    if (this->isappresent == true){
-        foreach (portlist ap, this->apports) {
+    if (isappresent == true){
+        foreach (portlist ap, apports) {
             if(!(QSerialPortInfo(ap.name).isBusy())){
                 avail = true;
             }
         }
     }
     return avail;
+}
+
+bool Communication::openPort(){
+    if(this->apAvail()){
+        portlist tmp = apports.front();
+        serial = new QSerialPort(tmp.name);
+        serial->setBaudRate(QSerialPort::Baud115200);
+        if(serial->open(QIODevice::ReadWrite))
+            return true;
+    }
+    return false;
 }

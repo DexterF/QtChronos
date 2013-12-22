@@ -3,6 +3,7 @@
 #include <QVBoxLayout>
 #include <QLabel>
 #include <vector>
+#include <QtSerialPort/QtSerialPort>
 
 #ifndef COMMUNICATION_H
 #define COMMUNICATION_H
@@ -16,12 +17,14 @@ typedef struct _portlist{
 class Communication
 {
 private:
-    bool isappresent = false;
+    bool isappresent;
     std::vector<portlist> ports;
     std::vector<portlist> apports;
+    QSerialPort *serial;
 public:
     Communication();
     bool apAvail();
+    bool openPort();
 };
 
 
