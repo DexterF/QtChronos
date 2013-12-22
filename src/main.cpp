@@ -29,10 +29,13 @@ int main(int argc, char *argv[])
     QVBoxLayout *layout = new QVBoxLayout;
     Communication *ser = new Communication();
 
-    foreach (portlist sport, ser->ports) {
-        QLabel *label = new QLabel(sport.name + " - " + sport.description + " @ " + sport.path + "\n");
-        layout->addWidget(label);
-    }
+    QLabel *label;
+    if(ser->apAvail())
+        label = new QLabel(QString::fromStdString("Woot! Available!!"));
+    else
+        label = new QLabel(QString::fromStdString("=( No ap available"));
+
+    layout->addWidget(label);
 
     w.setLayout(layout);
     w.show();

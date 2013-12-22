@@ -9,17 +9,19 @@
 
 typedef struct _portlist{
     QString name;
-    QString path;
     QString description;
 } portlist;
 
 
 class Communication
 {
+private:
+    bool isappresent = false;
+    std::vector<portlist> ports;
+    std::vector<portlist> apports;
 public:
     Communication();
-    QString listPorts();
-    std::vector<portlist> ports;
+    bool apAvail();
 };
 
 
