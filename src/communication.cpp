@@ -38,7 +38,7 @@ bool Communication::openPort(){
     if(this->apAvail()){
         portlist tmp = apports.front();
         serial = new QSerialPort();
-        serial->setPortName("ttyS0");
+        serial->setPortName(tmp.name);
         if(serial->open(QIODevice::ReadWrite)){
             serial->setBaudRate(QSerialPort::Baud115200);
             return true;
@@ -47,4 +47,12 @@ bool Communication::openPort(){
             qDebug() << "Serial open failed with error: " << serial->errorString();
     }
     return false;
+}
+
+void Communication::closePort(){
+    serial->close();
+}
+
+Communication::~Communication(){
+    this->closePort();
 }

@@ -25,6 +25,8 @@ public:
     Communication();
     bool apAvail();
     bool openPort();
+    void closePort();
+    ~Communication();
 };
 
 #endif // COMMUNICATION_H
