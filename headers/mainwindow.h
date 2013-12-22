@@ -6,6 +6,7 @@
 #include <QMainWindow>
 #include <QPushButton>
 #include <QShortcut>
+#include <QMenu>
 
 namespace Ui {
 class MainWindow;
@@ -21,9 +22,14 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    QMenu* menuSettings;
+    QPushButton* buttonSettings;
+
+    void setupMenu();
 
 private slots:
-    void OpenSettings();
+    void openMenu();
+    void openSettings();
 };
 
 #endif // MAINWINDOW_H
