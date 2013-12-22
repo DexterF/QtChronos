@@ -17,11 +17,15 @@ private:
     std::vector<portlist> ports;
     std::vector<portlist> apports;
     QSerialPort *serial;
+    bool sendPayload(QByteArray &payload);
+    QByteArray getPayload();
 public:
     Communication();
     bool apAvail();
     bool openPort();
     void closePort();
+    void resetHW();
+    void getHWStatus();
     ~Communication();
 };
 

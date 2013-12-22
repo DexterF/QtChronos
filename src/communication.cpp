@@ -22,6 +22,10 @@ Communication::Communication()
     }
 }
 
+Communication::~Communication(){
+    this->closePort();
+}
+
 bool Communication::apAvail(){
     bool avail = false;
     if (isappresent == true){
@@ -53,6 +57,32 @@ void Communication::closePort(){
     serial->close();
 }
 
-Communication::~Communication(){
-    this->closePort();
+bool Communication::sendPayload(QByteArray &payload){
+    if(payload.isEmpty()){
+        return false;
+    }
+    serial->write(payload);
+    QThread::msleep(15);
+    return true;
+}
+
+QByteArray Communication::getPayload(){
+    QByteArray payload;
+    payload = serial->read(10);
+    return payload;
+}
+
+void Communication::resetHW(){
+    QByteArray payload;
+    payload.append("\xFF\x01\x03", 3);
+    sendPayload(payload);
+}
+
+void Communication::getHWStatus(){
+    QByteArray payloadsent, payloadrecv;
+    payloadsent.append("\xFF\x00\x04\x00", 4);
+    sendPayload(payloadsent);
+    payloadrecv = getPayload();
+    qDebug() << payloadrecv.toHex();
+
 }

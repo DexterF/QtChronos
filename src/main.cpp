@@ -21,6 +21,8 @@ int main(int argc, char *argv[])
 
         label = new QLabel(QString::fromStdString("Woot! Available!!"));
         ser->openPort();
+        ser->resetHW();
+        ser->getHWStatus();
     }
     else
         label = new QLabel(QString::fromStdString("=( No ap available"));
