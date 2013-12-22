@@ -1,16 +1,3 @@
-/*#include "headers/mainwindow.h"
-#include <QApplication>
-
-int main(int argc, char *argv[])
-{
-    QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
-
-    return a.exec();
-}*/
-
-
 #include <QApplication>
 #include <QWidget>
 #include <QVBoxLayout>
@@ -25,7 +12,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 
     QWidget w;
-    w.setWindowTitle(QObject::tr("Info about all available serial ports."));
+    w.setWindowTitle(QObject::tr("QtChronos Dummy App"));
     QVBoxLayout *layout = new QVBoxLayout;
     Communication *ser = new Communication();
 

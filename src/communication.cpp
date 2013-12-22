@@ -1,9 +1,9 @@
 #include "headers/communication.h"
-#include <QtSerialPort/QtSerialPort>
-#include <QApplication>
-#include <QWidget>
-#include <QVBoxLayout>
-#include <QLabel>
+//#include <QtSerialPort/QtSerialPort>
+//#include <QApplication>
+//#include <QWidget>
+//#include <QVBoxLayout>
+//#include <QLabel>
 
 Communication::Communication()
 {

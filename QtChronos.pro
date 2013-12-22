@@ -13,10 +13,9 @@ TEMPLATE = app
 
 
 SOURCES += src/main.cpp\
-        src/mainwindow.cpp \
     src/communication.cpp
 
-HEADERS  += headers/mainwindow.h \
+HEADERS  += \
     headers/communication.h
 
-FORMS    += ui/mainwindow.ui
+FORMS    +=

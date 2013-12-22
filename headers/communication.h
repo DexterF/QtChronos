@@ -1,12 +1,8 @@
-#include <QApplication>
-#include <QWidget>
-#include <QVBoxLayout>
-#include <QLabel>
-#include <vector>
-#include <QtSerialPort/QtSerialPort>
-
 #ifndef COMMUNICATION_H
 #define COMMUNICATION_H
+
+#include <vector>
+#include <QtSerialPort/QtSerialPort>
 
 typedef struct _portlist{
     QString name;
