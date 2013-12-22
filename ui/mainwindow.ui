@@ -33,19 +33,24 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <property name="documentMode">
        <bool>false</bool>
       </property>
-      <widget class="QWidget" name="tab">
+      <widget class="QWidget" name="tabSync">
        <attribute name="title">
-        <string>Tab 1</string>
+        <string>Sync</string>
        </attribute>
       </widget>
-      <widget class="QWidget" name="tab_2">
+      <widget class="QWidget" name="tabACC">
        <attribute name="title">
-        <string>Tab 2</string>
+        <string>ACC</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tabPPT">
+       <attribute name="title">
+        <string>PPT</string>
        </attribute>
       </widget>
      </widget>
