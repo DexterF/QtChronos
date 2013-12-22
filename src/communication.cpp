@@ -43,6 +43,8 @@ bool Communication::openPort(){
         serial->setBaudRate(QSerialPort::Baud115200);
         if(serial->open(QIODevice::ReadWrite))
             return true;
+        else
+            QDebug("Serial open failed with error: " + serial->errorString());
     }
     return false;
 }
