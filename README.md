@@ -1,4 +1,4 @@
-QTChronos
+QtChronos
 =========
 
-QT Interface for the TI Chronos Clock
+Qt Interface for the TI Chronos Clock
